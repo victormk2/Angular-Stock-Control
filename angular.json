@@ -36,7 +36,9 @@
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeflex/primeflex.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/chat.js/dist/chat.js"
+            ]
           },
           "configurations": {
             "production": {
