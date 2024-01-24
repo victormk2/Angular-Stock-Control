@@ -1,5 +1,5 @@
 import { UserService } from './../../services/user/user.service';
-import { Component, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
@@ -14,7 +14,10 @@ import { AuthRequest } from 'src/app/models/interfaces/user/auth/AuthRequest';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnDestroy {
+export class HomeComponent implements OnDestroy, AfterViewInit {
+  @ViewChild('emailInput') public emailInputRef!: ElementRef;
+  @ViewChild('passwordInput') public passwordInputRef!: ElementRef;
+
   private destroy$ = new Subject<void>();
   loginCard = true
 
@@ -99,5 +102,8 @@ export class HomeComponent implements OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  ngAfterViewInit(): void {
   }
 }

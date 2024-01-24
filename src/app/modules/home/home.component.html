@@ -6,10 +6,10 @@
       <form [formGroup]="loginForm" (ngSubmit)="onSubmitLoginForm()">
         <p-card styleClass="mt-10" header="Login" subheader="Faça login com sua conta existente" *ngIf="loginCard">
           <div class="flex justify-content-center align-content-center text-align-center">
-            <input type="email" pInputText placeholder="Email" formControlName="email">
+            <input type="email" pInputText placeholder="Email" formControlName="email" #emailInput>
           </div>
           <div class="flex justify-content-center align-content-center text-align-center mt-3">
-            <input type="password" pInputText placeholder="Senha" formControlName="password">
+            <input type="password" pInputText placeholder="Senha" formControlName="password" #passwordInput>
           </div>
 
           <div class=" card justify-content-center flex mt-3">
