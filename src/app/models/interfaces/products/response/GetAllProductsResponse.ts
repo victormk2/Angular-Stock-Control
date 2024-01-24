@@ -7,5 +7,5 @@ export interface GetAllProductsResponse {
   category: {
     id: string;
     name: string;
-  }
+  };
 }
